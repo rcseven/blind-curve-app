@@ -8,6 +8,7 @@ export default {
       red: "#FF0000",
       yellow: "#FFD700",
       green: "#008000",
+      gray: "#808080",
     },
     extend: {
       dropShadow: {
