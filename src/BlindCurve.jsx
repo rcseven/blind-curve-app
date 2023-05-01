@@ -6,7 +6,10 @@ import { useEffect } from "react";
 import BlindCurveCard from "./BlindCurveCard";
 
 const BlindCurve = () => {
-  const [trafficCondition, setTrafficCondition] = useState(null);
+  const [trafficCondition, setTrafficCondition] = useState({
+    style: "bg-gray",
+    condition: "No Data",
+  });
 
   useEffect(() => {
     const trafficConditionRef = ref(db, "trafficCondition");
@@ -15,16 +18,19 @@ const BlindCurve = () => {
 
       switch (data) {
         case 2:
-          setTrafficCondition("bg-red");
+          setTrafficCondition({ style: "bg-red", condition: "High Traffic" });
           break;
         case 1:
-          setTrafficCondition("bg-yellow");
+          setTrafficCondition({
+            style: "bg-yellow",
+            condition: "Medium Traffic",
+          });
           break;
         case 0:
-          setTrafficCondition("bg-green");
+          setTrafficCondition({ style: "bg-green", condition: "Low Traffic" });
           break;
         default:
-          setTrafficCondition("bg-gray");
+          setTrafficCondition({ style: "bg-gray", condition: "No Data" });
       }
     });
   }, []);
