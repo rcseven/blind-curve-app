@@ -1,39 +1,37 @@
 import { db } from "./Firebase";
 import { onValue, ref } from "firebase/database";
-import TrafficStatus from "./TrafficStatus";
+import TrafficCondition from "./TrafficCondition";
 import { useState } from "react";
 import { useEffect } from "react";
 import BlindCurveCard from "./BlindCurveCard";
 
 const BlindCurve = () => {
-  const [trafficCondition, setTrafficCondition] = useState();
-  const [trafficStatus, setTrafficStatus] = useState();
+  const [trafficCondition, setTrafficCondition] = useState(null);
 
   useEffect(() => {
     const trafficConditionRef = ref(db, "trafficCondition");
     onValue(trafficConditionRef, (snapshot) => {
       const data = snapshot.val();
-      setTrafficCondition(data);
 
       switch (data) {
         case 2:
-          setTrafficStatus("bg-red");
+          setTrafficCondition("bg-red");
           break;
         case 1:
-          setTrafficStatus("bg-yellow");
+          setTrafficCondition("bg-yellow");
           break;
         case 0:
-          setTrafficStatus("bg-green");
+          setTrafficCondition("bg-green");
           break;
         default:
-          setTrafficStatus("bg-gray");
+          setTrafficCondition("bg-gray");
       }
     });
   }, []);
 
   return (
     <BlindCurveCard title={"Blind Curve Traffic Condition"}>
-      <TrafficStatus trafficStatus={trafficStatus} />
+      <TrafficCondition trafficCondition={trafficCondition} />
     </BlindCurveCard>
   );
 };
