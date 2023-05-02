@@ -1,4 +1,4 @@
-import BlindCurve from "./BlindCurve";
+import BlindCurve from "./components/BlindCurve";
 function App() {
   return (
     <main className="flex items-center justify-center bg-background w-screen h-screen">

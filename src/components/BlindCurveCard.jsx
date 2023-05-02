@@ -1,5 +1,5 @@
 import TrafficConditionLegend from "./TrafficConditionLegend";
-import CurveRoad from "./assets/Curve-Road.png";
+import CurveRoad from "../assets/Curve-Road.png";
 
 const BlindCurveCard = ({ children, title }) => {
   return (

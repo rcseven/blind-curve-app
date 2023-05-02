@@ -1,13 +1,13 @@
 import TrafficCondition from "./TrafficCondition";
 import BlindCurveCard from "./BlindCurveCard";
-import useTrafficConditionReadings from "./useTrafficConditionReadings";
+import useReadings from "../hooks/useReadings";
 
 const BlindCurve = () => {
-  const { trafficCondition } = useTrafficConditionReadings();
+  const { data, error } = useReadings("trafficCondition");
 
   return (
     <BlindCurveCard title={"Blind Curve Traffic Condition"}>
-      <TrafficCondition trafficCondition={trafficCondition} />
+      <TrafficCondition data={data} />
     </BlindCurveCard>
   );
 };
