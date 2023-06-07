@@ -4,10 +4,10 @@ const TrafficConditionLegend = () => {
   return (
     <ol className="absolute top-0 right-0">
       <li className={list_styles}>
-        <span className={`bg-red ${bullet_styles}`}></span>High Traffic
+        <span className={`bg-red ${bullet_styles}`}></span>Heavy Traffic
       </li>
       <li className={list_styles}>
-        <span className={`bg-yellow ${bullet_styles}`}></span>Low Traffic
+        <span className={`bg-yellow ${bullet_styles}`}></span>Light Traffic
       </li>
       <li className={list_styles}>
         <span className={`bg-green ${bullet_styles}`}></span>No Traffic
