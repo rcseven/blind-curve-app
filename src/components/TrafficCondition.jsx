@@ -31,9 +31,9 @@ const TrafficCondition = ({ data }) => {
 
   return (
     <div className="flex items-center justify-center gap-2">
-      <h1 className="text-[0.8em] xl:text-[2em]">Status:</h1>
+      <h1 className="text-[1em] md:text-[1.5em] 2xl:text-[2em]">Status:</h1>
       <div
-        className={`${trafficCondition.style} w-4 h-4 lg:w-8 lg:h-8`}
+        className={`${trafficCondition.style} w-4 h-4 lg:w-8 lg:h-8 `}
         alt={trafficCondition.conditon}
         title={trafficCondition.condition}
       ></div>
